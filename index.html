@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilth - Focused Gardening Apps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Typography Settings */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .font-serif-custom {
+            font-family: 'Source Serif 4', serif;
+        }
+
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Base animation classes */
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        /* Staggered delays */
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+        .delay-700 { animation-delay: 700ms; }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up,
+            .animate-fade-in,
+            .animate-scale-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+                filter: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="w-full py-6 px-6 md:px-10 flex justify-between items-center animate-fade-in delay-0">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+            <!-- Triangle Icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-black">
+                <path d="M2 22L12 4L22 22H2Z" fill="currentColor"/>
+            </svg>
+            <span class="text-xl font-semibold tracking-tight">Tilth</span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-500">
+            <a href="#" class="hover:text-black transition-colors flex items-center gap-1">Product <span class="text-xs">+</span></a>
+            <a href="#" class="hover:text-black transition-colors">Academy</a>
+            <a href="#" class="hover:text-black transition-colors">Blog</a>
+            <a href="#" class="hover:text-black transition-colors">Resources</a>
+            <a href="#" class="hover:text-black transition-colors">About</a>
+            <a href="#" class="hover:text-black transition-colors">Start Now</a>
+            
+            <!-- Divider -->
+            <div class="h-4 w-[1px] bg-gray-300 mx-1"></div>
+            
+            <a href="#" class="hover:text-black transition-colors">Log in</a>
+        </div>
+
+        <!-- Mobile Menu Icon (Placeholder) -->
+        <div class="lg:hidden">
+            <button class="text-gray-900">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Hero Content -->
+    <main class="w-full max-w-[1440px] mx-auto px-6 md:px-10 pt-16 md:pt-24 lg:pt-32 pb-16">
+        
+        <!-- Split Layout: Headline & Description -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-24 md:mb-32">
+            
+            <!-- Left Column: Headline -->
+            <div class="lg:col-span-7">
+                <h1 class="font-serif-custom text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] leading-[1.05] tracking-tight text-gray-900 text-balance animate-fade-in-up delay-100">
+                    Software that creates the right conditions for growth
+                </h1>
+            </div>
+
+            <!-- Right Column: Description & CTAs -->
+            <div class="lg:col-span-5 flex flex-col justify-start lg:pl-8 pt-2">
+                <p class="text-lg md:text-[1.15rem] leading-relaxed text-[#44403c] text-pretty mb-8 max-w-xl animate-fade-in-up delay-200">
+                    Focused apps that solve gardening problems through careful design and zero bloat. Plan your season and track your progress with tools that respect your time.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 animate-fade-in-up delay-300">
+                    <button class="bg-[#059669] hover:bg-[#047857] text-white px-6 py-3 rounded-full font-medium transition-all duration-200 text-[15px]">
+                        Get GrowPlan
+                    </button>
+                    <button class="bg-[#f3f4f6] hover:bg-[#e5e7eb] text-gray-900 px-6 py-3 rounded-full font-medium transition-all duration-200 text-[15px]">
+                        Try for Free
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Proof / Logos -->
+        <div class="mb-20 animate-fade-in delay-400">
+            <p class="text-gray-500 text-sm mb-8">Helping gardeners grow with confidence</p>
+            
+            <!-- Logo Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale">
+                <img src="https://placehold.co/160x40/white/333333?text=whitesummers&font=playfair" alt="whitesummers" class="h-8 w-auto object-contain animate-fade-in delay-500">
+                <img src="https://placehold.co/140x40/white/333333?text=HDRB%26B&font=serif" alt="HDRB&B" class="h-8 w-auto object-contain animate-fade-in delay-500">
+                <img src="https://placehold.co/140x50/white/333333?text=ELDIB+ADVOCATES&font=serif" alt="ELDIB" class="h-10 w-auto object-contain animate-fade-in delay-600">
+                <img src="https://placehold.co/80x80/white/333333?text=ELP&font=serif" alt="ELP" class="h-12 w-auto object-contain animate-fade-in delay-600">
+                <img src="https://placehold.co/180x40/white/333333?text=anagrampartners&font=sans" alt="anagrampartners" class="h-6 w-auto object-contain animate-fade-in delay-700">
+                <img src="https://placehold.co/60x60/white/333333?text=D&font=montserrat" alt="D Logo" class="h-8 w-auto object-contain animate-fade-in delay-700">
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Image Section -->
+    <div class="w-full bg-[#dbe1e6] pt-12 md:pt-20 px-4 md:px-10 overflow-hidden animate-scale-in delay-500 origin-bottom">
+        <div class="max-w-[1440px] mx-auto relative">
+            <!-- Device Mockup Container -->
+            <div class="relative w-full max-w-6xl mx-auto">
+                <!-- The Device Image -->
+                <img 
+                    src="https://placehold.co/1200x800/111111/333333?text=GrowPlan+App+Interface" 
+                    alt="App Interface" 
+                    class="w-full h-auto rounded-t-3xl shadow-2xl border-[12px] border-black border-b-0 mx-auto block"
+                >
+                <!-- Notch simulation (optional visual detail) -->
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-6 bg-black rounded-b-xl z-10"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
